@@ -22,8 +22,8 @@ contract FundMe {
     }
 
     function fund() public payable {
-    //allow users to sen $
-    //have a minimum $ sent
+        //allow users to sen $
+        //have a minimum $ sent
         require(msg.value.getConversionRate(s_priceFeed) >= MINIMUM_USD, "You need to spend more ETH!");
         // require(PriceConverter.getConversionRate(msg.value) >= MINIMUM_USD, "You need to spend more ETH!");
         s_addressToAmountFunded[msg.sender] += msg.value;
